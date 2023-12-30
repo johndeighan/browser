@@ -1,7 +1,5 @@
 # browser.coffee
 
-import {browser} from "$app/environment"
-
 import {undef, defined, notdefined} from '@jdeighan/base-utils'
 import {assert, croak} from '@jdeighan/base-utils/exceptions'
 
@@ -27,13 +25,19 @@ export beep = (volume=100, freq=520, duration=200) =>
 
 # ---------------------------------------------------------------------------
 
+export inBrowser = () ->
+
+	return (typeof window != 'undefined')
+
+# ---------------------------------------------------------------------------
+
 export localStorageAvailable = () ->
 
-	if ! browser
+	if ! inBrowser()
+		return false
+	if (typeof window.localStorage == 'undefined')
 		return false
 	storage = window.localStorage
-	if notdefined(storage)
-		return false
 	try
 		x = '__storage_test__'
 		storage.setItem x, x

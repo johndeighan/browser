@@ -10,10 +10,6 @@
 		".": "./src/lib/browser.js",
 		"./package.json": "./package.json"
 		},
-	"main": "index.js",
-	"directories": {
-		"test": "test"
-	},
 	"scripts": {
 		"build": "cls && coffee -c .",
 		"test": "npm run build && ava ./test/*.test.js && git status"
