@@ -21,6 +21,6 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@jdeighan/base-utils": "^8.0.23",
-		"@jdeighan/unit-tester": "^3.0.70"
+		"@jdeighan/unit-tester": "^3.0.71"
 	}
 }
